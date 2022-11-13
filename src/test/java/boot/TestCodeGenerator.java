@@ -21,7 +21,7 @@ import java.util.Set;
 public class TestCodeGenerator {
     public static void main(String[] args) {
 //        CodeGeneratorConfig build = buildMallEntity();
-        CodeGeneratorConfig build = buildManEntity();
+        CodeGeneratorConfig build = buildAlarmEntity();
 
         //mysql 账号密码
         build.setUsername("root");
@@ -29,7 +29,7 @@ public class TestCodeGenerator {
         // 指定是boot项目
         build.setIsBoot(true);
 
-        String path = "/Users/tangyh/github/lamp-boot/lamp-mall";
+        String path = "D:\\Documents\\code\\wcf\\lamp-b\\lamp-boot\\lamp-biz";
         System.out.println("输出路径：" + path);
         build.setProjectRootPath(path);
         // 项目前缀
@@ -45,10 +45,10 @@ public class TestCodeGenerator {
         // 覆盖生成Xml
         fileCreateConfig.setGenerateXml(GenerateType.OVERRIDE);
         // 忽略生成Dao
-        fileCreateConfig.setGenerateDao(GenerateType.IGNORE);
-        fileCreateConfig.setGenerateServiceImpl(GenerateType.IGNORE);
-        fileCreateConfig.setGenerateService(GenerateType.IGNORE);
-        fileCreateConfig.setGenerateController(GenerateType.IGNORE);
+        fileCreateConfig.setGenerateDao(GenerateType.OVERRIDE);
+        fileCreateConfig.setGenerateServiceImpl(GenerateType.OVERRIDE);
+        fileCreateConfig.setGenerateService(GenerateType.OVERRIDE);
+        fileCreateConfig.setGenerateController(GenerateType.OVERRIDE);
         build.setFileCreateConfig(fileCreateConfig);
 
         //手动指定枚举类 生成的路径
@@ -90,5 +90,82 @@ public class TestCodeGenerator {
         build.setIsGenEntity(false);
         return build;
     }
+
+    public static CodeGeneratorConfig buildAlarmEntity() {
+        List<String> tables = Arrays.asList(
+                "a_alarm_definition",
+                "a_alarm_info"
+        );
+        CodeGeneratorConfig build = CodeGeneratorConfig.
+                build("alarm", "alarm", "leo", "a_", tables);
+        build.setSuperEntity(EntityType.ENTITY);
+        build.setChildPackageName("");
+        build.setUrl("jdbc:mysql://127.0.0.1:3306/lamp_column?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useUnicode=true&useSSL=false&autoReconnect=true&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&nullCatalogMeansCurrent=true");
+
+        build.setIsGenEntity(false);
+        return build;
+    }
+
+
+    public static CodeGeneratorConfig buildDeviceEntity() {
+        List<String> tables = Arrays.asList(
+                "a_device_info"
+        );
+        CodeGeneratorConfig build = CodeGeneratorConfig.
+                build("device", "device", "leo", "a_", tables);
+        build.setSuperEntity(EntityType.ENTITY);
+        build.setChildPackageName("");
+        build.setUrl("jdbc:mysql://127.0.0.1:3306/lamp_column?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useUnicode=true&useSSL=false&autoReconnect=true&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&nullCatalogMeansCurrent=true");
+
+        build.setIsGenEntity(false);
+        return build;
+    }
+
+
+    public static CodeGeneratorConfig buildPortraitEntity() {
+        List<String> tables = Arrays.asList(
+                "a_portrait_info"
+        );
+        CodeGeneratorConfig build = CodeGeneratorConfig.
+                build("portrait", "portrait", "leo", "a_", tables);
+        build.setSuperEntity(EntityType.ENTITY);
+        build.setChildPackageName("");
+        build.setUrl("jdbc:mysql://127.0.0.1:3306/lamp_column?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useUnicode=true&useSSL=false&autoReconnect=true&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&nullCatalogMeansCurrent=true");
+
+        build.setIsGenEntity(false);
+        return build;
+    }
+
+
+    public static CodeGeneratorConfig buildTaskEntity() {
+        List<String> tables = Arrays.asList(
+                "a_task_definition",
+                "a_task_info"
+        );
+        CodeGeneratorConfig build = CodeGeneratorConfig.
+                build("task", "task", "leo", "a_", tables);
+        build.setSuperEntity(EntityType.ENTITY);
+        build.setChildPackageName("");
+        build.setUrl("jdbc:mysql://127.0.0.1:3306/lamp_column?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useUnicode=true&useSSL=false&autoReconnect=true&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&nullCatalogMeansCurrent=true");
+
+        build.setIsGenEntity(false);
+        return build;
+    }
+
+
+    public static CodeGeneratorConfig buildVenueEntity() {
+        List<String> tables = Arrays.asList(
+                "a_venue_info"
+        );
+        CodeGeneratorConfig build = CodeGeneratorConfig.
+                build("venue", "venue", "leo", "a_", tables);
+        build.setSuperEntity(EntityType.ENTITY);
+        build.setChildPackageName("");
+        build.setUrl("jdbc:mysql://127.0.0.1:3306/lamp_column?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useUnicode=true&useSSL=false&autoReconnect=true&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&nullCatalogMeansCurrent=true");
+
+        build.setIsGenEntity(false);
+        return build;
+    }
+
 
 }

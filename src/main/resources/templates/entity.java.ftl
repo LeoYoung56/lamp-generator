@@ -25,7 +25,7 @@ import lombok.ToString;
 import lombok.experimental.Accessors;
 import ${cfg.groupId}.common.constant.DictionaryType;
 import static ${cfg.utilPackage}.utils.DateUtils.DEFAULT_DATE_TIME_FORMAT;
-import ${cfg.utilPackage}.model.EchoVO;
+import ${cfg.utilPackage}.interfaces.echo.EchoVO;
 </#if>
 <#if cfg.filedTypes??>
 <#list cfg.filedTypes as fieldType>

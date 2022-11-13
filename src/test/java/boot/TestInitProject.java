@@ -15,7 +15,7 @@ public class TestInitProject {
 
     public static void main(String[] args) {
         CodeGeneratorConfig config = new CodeGeneratorConfig();
-        String path = "/Users/tangyh/Downloads/test/lamp-boot";
+        String path = "D:\\Documents\\code\\wcf\\lamp-b\\lamp-boot";
 //        String path = "/Users/tangyh/github/lamp-boot";
         config
                 // lamp-cloud 项目的 绝对路径！
@@ -24,24 +24,24 @@ public class TestInitProject {
                 .setProjectPrefix("lamp")
 
                 // 需要新建的 服务名      该例会生成 lamp-mall 模块
-                .setServiceName("mall")
+                .setServiceName("biz")
 
                 // 子模块的设置请参考 消息服务 （msg 模块下的 sms 模块即 视为子模块）
 //                .setChildModuleName("mall")
                 // 子模块的设置请参考 消息服务 （msg 模块下的 sms 模块即 视为子模块）
-                .setChildModuleName("man")
+                .setChildModuleName("portrait")
 
-                .setIsGenEntity(false)
+                .setIsGenEntity(true)
                 .setIsBoot(true)
 
                 // 生成代码的注释 @author zuihou
-                .setAuthor("zuihou")
+                .setAuthor("leo")
                 // 项目描述
-                .setDescription("商城")
+                .setDescription("业务")
                 // 项目的版本， 一定要跟 zuihou-admin-cloud 下的其他服务版本一致， 否则会出错哦
-                .setVersion("3.0.0-SNAPSHOT")
+                .setVersion("3.10.0")
                 // 服务的端口号
-                .setServerPort("12080")
+                .setServerPort("12001")
                 // 项目的 groupId
                 .setGroupId("top.tangyh.lamp")
         ;

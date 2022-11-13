@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 import ${superControllerClassPackage};
 </#if>
 import com.baomidou.mybatisplus.core.metadata.IPage;
-import ${cfg.utilPackage}.echo.core.EchoService;
+import ${cfg.utilPackage}.interfaces.echo.EchoService;
 import ${cfg.utilPackage}.base.R;
 import io.swagger.annotations.Api;
 import lombok.extern.slf4j.Slf4j;
